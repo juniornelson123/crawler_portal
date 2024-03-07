@@ -1,0 +1,26 @@
+<%- model_class = Dissertation -%>
+<%= content_for :page_header do %>
+<% end %>
+<h3 class="fs-4">MESTRADO EM ADMINISTRAÇÃO E DESENVOLVIMENTO EMPRESARIAL</h3>
+<div class="table-responsive">
+  <table class="responsive-table table-striped table-hover">
+    <thead>
+      <tr class="bg-white text-uppercase fs-sm">
+        <th class="text-center tippy" width="50" data-tippy-content="Tipo de pagamento">Ano</th>
+        <th class="text-center tippy" width="70" data-tippy-content="Número do pedido">Mestrando</th>
+        <th class="text-center" width="400">Titulo</th>
+        <th class="text-center">Link Documento</th>
+        <th class="text-center">Banca Avaliadora</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @dissertations.each_with_index do |dissertation, i| %>
+        <%= render 'dissertation', dissertation: dissertation, i: i %>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<div class="paginateBox <%= 'no-records' if @dissertations.count.zero? %>">
+  <%= paginate @dissertations %>
+  <%= page_entries_info @dissertations %>
+</div>
