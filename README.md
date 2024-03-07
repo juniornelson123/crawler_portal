@@ -1,24 +1,11 @@
-# README
+# PARA RODAR
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+rake db:create db:migrate
 
-Things you may want to cover:
 
-* Ruby version
+rails c
 
-* System dependencies
+GetEstacioJob.perform_now
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Arquivo do crawler
+/home/junior/projetos/yduqs/crawler_portal/app/jobs/get_estacio_job.rb
